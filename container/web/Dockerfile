@@ -3,4 +3,9 @@ FROM python:3.5.2-alpine
 RUN apk update
 RUN apk add vim git mariadb-client
 
-CMD ping localhost
+WORKDIR /web
+RUN git clone https://github.com/nanakenashi/book_search.git book_search
+RUN pip install -r ./book_search/requirements.txt
+
+ENV FLASK_APP /web/book_search/app/app.py
+CMD flask run -h 0.0.0.0 -p 5000
