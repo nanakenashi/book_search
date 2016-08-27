@@ -1,0 +1,18 @@
+data:
+  build: container/data
+
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: 'password'
+  ports:
+    - '3306:3306'
+  volumes_from:
+    - data
+
+web:
+  build: container/web
+  ports:
+    - '5000:5000'
+  links:
+    - db
