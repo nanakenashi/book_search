@@ -4,7 +4,10 @@ data:
 db:
   image: mysql
   environment:
-    MYSQL_ROOT_PASSWORD: 'password'
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_USER: nanakenashi
+    MYSQL_PASSWORD: nanakenashi
+    MYSQL_DATABASE: book_search
   ports:
     - '3306:3306'
   volumes_from:
