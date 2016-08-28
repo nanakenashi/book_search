@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+
+{% block main_contents %}
+  {% for author in authors %}
+    <a href="{{ url_for('author', author_id=author.id) }}">
+      {{ author.name }}
+    </a>
+  {% endfor %}
+{% endblock%}

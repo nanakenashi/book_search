@@ -4,6 +4,12 @@ from src.models import Author
 
 
 @app.route('/')
-def index():
+def authors():
     authors = Author.query.all()
-    return render_template('index.html', authors=authors)
+    return render_template('authors.html', authors=authors)
+
+
+@app.route('/a-<author_id>/')
+def author(author_id):
+    author = Author.query.filter_by(id=author_id).first()
+    return render_template('author.html', author=author)
