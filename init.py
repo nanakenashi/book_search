@@ -1,4 +1,4 @@
-from src import models
+from src import db
 
 if __name__ == '__main__':
-    models.init()
+    db.create_all()

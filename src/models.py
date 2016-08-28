@@ -9,7 +9,3 @@ class Author(db.Model):
 
     def __repr(self):
         return '<Author %r>' % self.name
-
-
-def init():
-    db.create_all()
