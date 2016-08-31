@@ -8,7 +8,7 @@ if __name__ == '__main__':
     db.create_all()
 
     parent_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(parent_dir, 'tmp', 'authors.csv')
+    file_path = os.path.join(parent_dir, 'resource', 'authors.csv')
 
     with open(file_path, 'r') as f:
         reader = csv.DictReader(f)
