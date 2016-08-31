@@ -11,9 +11,15 @@
 
   {% if books | length > 0 %}
     {% for book in books %}
-      <p>
-        {{ book.Item.title }}
-      </p>
+      <ul>
+        <li>
+          {{ book.title }}
+        </li>
+        <li>
+          {{ book.publisher_name }}
+        </li>
+      </ul>
+      <img src="{{ book.small_image_url }}">
     {% endfor %}
   {% endif %}
 {% endblock%}

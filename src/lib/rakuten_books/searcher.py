@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import requests
+from .book import Book
 
 
-class BookSearcher:
+class Searcher:
 
     URL = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20130522'
 
@@ -12,8 +13,9 @@ class BookSearcher:
     def find(self, opts):
         query = self.__build_query(opts)
         r = requests.get(self.URL, params=query)
+        books = self.__wrap_array(r.json()['Items'])
 
-        return r.json()['Items']
+        return books
 
     def __build_query(self, opts):
         query = self.__base_query()
@@ -26,3 +28,6 @@ class BookSearcher:
             'format': 'json',
             'applicationId': self.application_id
         }
+
+    def __wrap_array(self, rows):
+        return [Book(row['Item']) for row in rows]
