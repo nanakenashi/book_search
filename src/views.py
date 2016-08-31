@@ -14,6 +14,8 @@ def authors():
 @app.route('/a-<author_id>/')
 def author(author_id):
     author = Author.query.filter_by(id=author_id).first()
-    books = BookSearcher().find({'author': author.name})
+
+    application_id = app.config['RAKUTEN_APPLICATION_ID']
+    books = BookSearcher(application_id).find({'author': author.name})
 
     return render_template('author.html', author=author, books=books)

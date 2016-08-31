@@ -5,10 +5,9 @@ import requests
 class BookSearcher:
 
     URL = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20130522'
-    APPLICATION_ID = ''
 
-    def __init__(self):
-        pass
+    def __init__(self, application_id):
+        self.application_id = application_id
 
     def find(self, opts):
         query = self.__build_query(opts)
@@ -25,5 +24,5 @@ class BookSearcher:
     def __base_query(self):
         return {
             'format': 'json',
-            'applicationId': self.APPLICATION_ID
+            'applicationId': self.application_id
         }
