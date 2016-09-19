@@ -4,6 +4,10 @@
   margin: 10px;
 }
 
+section.books a {
+  text-decoration: none;
+}
+
 section.books .book {
   height: 210px;
   margin: 10px 5px;
@@ -21,9 +25,12 @@ section.books .book:hover {
 }
 
 section.books .book .title {
+  float: left;
+  width: 760px;
   color: #555;
   font-size: 20px;
   margin: 10px 0;
+  padding-left: 10px;
 }
 
 section.books .book .title p {
@@ -38,7 +45,7 @@ section.books .book .photo {
 section.books .book .spec {
   float: left;
   width: 760px;
-  margin: 10px 10px;
+  margin: 5px 10px;
   color: #555;
   word-wrap: break-word;
 }

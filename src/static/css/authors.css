@@ -32,5 +32,6 @@ header {
 }
 
 .list li a:hover {
+  color: #78d19e;
   text-decoration: underline;
 }
