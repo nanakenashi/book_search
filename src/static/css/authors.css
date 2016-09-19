@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.list {
+  padding: 20px;
+}
+
+.list li {
+  display: inline-block;
+  margin: 5px;
+}

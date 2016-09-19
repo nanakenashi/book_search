@@ -1,9 +1,21 @@
 {% extends '_base.html' %}
 
+{% block css %}
+  <link href="{{ url_for('static', filename='css/authors.css') }}" rel="stylesheet">
+{% endblock%}
+
 {% block main_contents %}
-  {% for author in authors %}
-    <a href="{{ url_for('author', author_id=author.id) }}">
-      {{ author.name }}
-    </a>
-  {% endfor %}
+  <img src="{{ url_for('static', filename='image/eyecatch.png') }}">
+
+  <div class="list">
+    <ul>
+      {% for author in authors %}
+        <li>
+          <a href="{{ url_for('author', author_id=author.id) }}">
+            {{ author.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock%}
