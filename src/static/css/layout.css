@@ -15,8 +15,16 @@ body {
 header {
   height: 60px;
   width: 100%;
-  position: absolute;
+  background-color: #78d19e;
+  color: #fff;
   top: 0px;
+}
+
+header div {
+  font-size: 30px;
+  line-height: 60px;
+  width: 100%;
+  text-align: center;
 }
 
 main {
@@ -47,12 +55,13 @@ footer {
   clear: both;
 }
 
-h1, h2, p, li {
+h1, h2, header, footer, p, li {
   font-family: 'Noto Sans Japanese', sans-serif;
 }
 
 h1 {
   font-size: 20pt;
+  color: #727272;
   margin-bottom: 20px;
 }
 

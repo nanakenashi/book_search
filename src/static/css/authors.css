@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+header {
+  height: 60px;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+}
+
 .list {
   padding: 0px 20px;
 }
