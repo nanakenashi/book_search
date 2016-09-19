@@ -16,10 +16,20 @@
       header
     </header>
 
+    <div id="eyecatch">
+      {% block eyecatch %}
+      {% endblock %}
+    </div>
+
     <main>
       {% block main_contents %}
       {% endblock %}
     </main>
+
+    <div id="pre-footer">
+      {% block pre_footer %}
+      {% endblock %}
+    </div>
 
     <footer>
       footer
