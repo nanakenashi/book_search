@@ -17,19 +17,34 @@
     {% endif %}
   </div>
 
-  <h2>{{ author.name }}の著書一覧</h2>
+  <section class="books">
+    <h2>{{ author.name }}の著書一覧</h2>
 
-  {% if books | length > 0 %}
-    {% for book in books %}
-      <ul>
-        <li>
-          {{ book.title }}
-        </li>
-        <li>
-          {{ book.publisher_name }}
-        </li>
-      </ul>
-      <img src="{{ book.medium_image_url }}">
-    {% endfor %}
-  {% endif %}
+    {% if books | length > 0 %}
+      {% for book in books %}
+        <a href="{{ book.url }}">
+          <div class="book">
+            <img class="photo" src="{{ book.large_image_url }}">
+
+            <div class="title">
+              <p>{{ book.title }}</p>
+            </div>
+
+            <dl class="spec">
+              <dt>出版社</dt>
+              <dd>
+                {{ book.publisher_name }}
+              </dd>
+              <dt>概要</dt>
+              <dd>
+                {{ book.caption }}
+              </dd>
+            </dl>
+          </div>
+        </a>
+
+        <div class="clear"></div>
+      {% endfor %}
+    {% endif %}
+  </section>
 {% endblock%}

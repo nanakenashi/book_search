@@ -3,3 +3,42 @@
 .description {
   margin: 10px;
 }
+
+section.books .book {
+  height: 210px;
+  margin: 10px 5px;
+  background-color:#f9f9f9;
+  border: 1px solid #bdc8ca;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+section.books .book:hover {
+  position: relative;
+  top: 1px;
+  border: 1px solid #78d19e;
+  box-shadow: none;
+}
+
+section.books .book .title {
+  color: #555;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+section.books .book .title p {
+  text-decoration: none;
+}
+
+section.books .book .photo {
+  float: left;
+  margin: 5px 10px;
+}
+
+section.books .book .spec {
+  float: left;
+  width: 760px;
+  margin: 10px 10px;
+  color: #555;
+  word-wrap: break-word;
+}
