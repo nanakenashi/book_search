@@ -1,13 +1,23 @@
 {% extends '_base.html' %}
 
+{% block css %}
+  <link href="{{ url_for('static', filename='css/author.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block main_contents %}
   <h1>
     {{ author.name }}
   </h1>
 
-  {% if author.url %}
-    {{ author.name }}のプロフィールは<a href="{{ author.url }}">こちら</a>
-  {% endif %}
+  <div class="description">
+    {% if author.url %}
+      <p>
+        {{ author.name }}のプロフィールは<a href="{{ author.url }}">こちら</a>
+      </p>
+    {% endif %}
+  </div>
+
+  <h2>{{ author.name }}の著書一覧</h2>
 
   {% if books | length > 0 %}
     {% for book in books %}
@@ -19,7 +29,7 @@
           {{ book.publisher_name }}
         </li>
       </ul>
-      <img src="{{ book.small_image_url }}">
+      <img src="{{ book.medium_image_url }}">
     {% endfor %}
   {% endif %}
 {% endblock%}
