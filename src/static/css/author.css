@@ -24,11 +24,11 @@ section.books .book:hover {
 
 section.books .book .title {
   float: left;
-  width: 560px;
+  width: 680px;
   color: #555;
   font-size: 20px;
   letter-spacing: 1px;
-  margin: 10px 0;
+  margin: 15px 0;
   padding-left: 10px;
 }
 
@@ -41,11 +41,12 @@ section.books .book .photo {
   width: 200px;
   margin: 5px 10px;
   text-align: center;
+  background-color: #fff;
 }
 
 section.books .book .spec {
   float: left;
-  width: 560px;
+  width: 680px;
   margin: 5px 10px;
   color: #555;
   word-wrap: break-word;

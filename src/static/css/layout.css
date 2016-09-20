@@ -21,10 +21,18 @@ header {
 }
 
 header div {
-  font-size: 30px;
   line-height: 60px;
   width: 100%;
   text-align: center;
+}
+
+header div a {
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 60px;
+  text-align: center;
+  text-decoration: none;
 }
 
 main {
