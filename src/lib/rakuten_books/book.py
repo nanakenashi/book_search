@@ -35,6 +35,10 @@ class Book:
         return self.raw['itemUrl']
 
     @property
+    def sales_date(self):
+        return self.raw['salesDate']
+
+    @property
     def small_image_url(self):
         return self.raw['smallImageUrl']
 

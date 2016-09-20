@@ -43,8 +43,10 @@ section.books .book .title a:hover {
 section.books .book .photo {
   float: left;
   width: 200px;
+  height: 200px;
   margin: 5px 10px;
   text-align: center;
+  vertical-align: middle;
   background-color: #fff;
 }
 

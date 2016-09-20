@@ -57,6 +57,7 @@ footer {
 #pre-footer {
   background-color: #33ff99;
   height: 40px;
+  margin-top: 20px;
 }
 
 .clear {
@@ -74,6 +75,7 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   padding-left: 10px;
+  font-weight: normal;
 }
 
 h2 {
@@ -83,4 +85,5 @@ h2 {
   border-bottom: #c4ecd5 1px solid;
   padding: 10px 20px;
   margin-bottom: 20px;
+  font-weight: normal;
 }
