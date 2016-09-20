@@ -12,7 +12,7 @@
   <div class="description">
     {% if author.url %}
       <p>
-        {{ author.name }}のプロフィールは<a href="{{ author.url }}">こちら</a>
+        {{ author.name }}のプロフィールは<a href="{{ author.url }}" target="_blank">こちら</a>
       </p>
     {% endif %}
   </div>
@@ -22,30 +22,49 @@
 
     {% if books | length > 0 %}
       {% for book in books %}
-        <a href="{{ book.url }}">
           <div class="book">
             <div class="photo">
-              <img src="{{ book.large_image_url }}">
+              <a href="{{ book.url }}">
+                <img src="{{ book.large_image_url }}">
+              </a>
             </div>
 
             <div class="title">
-              <p>{{ book.title }}</p>
+              <a href="{{ book.url }}">
+                {{ book.title }}
+              </a>
             </div>
 
-            <dl class="spec">
-              <dt>出版社</dt>
-              <dd>
-                {{ book.publisher_name }}
-              </dd>
-              <dt>概要</dt>
-              <dd>
-                {{ book.caption }}
-              </dd>
-            </dl>
+            <div class="spec">
+              <dl>
+                <dt>出版社</dt>
+                <dd>
+                  {{ book.publisher_name }}
+                </dd>
+                <dt>レビュー平均値</dt>
+                <dd>
+                  {{ book.review_average }}
+                </dd>
+                <dt>レビュー数</dt>
+                <dd>
+                  {{ book.review_count }}
+                </dd>
+
+                <div class="clear"></div>
+              </dl>
+            </div>
+
+            <div class="description">
+              {{ book.caption }}
+            </div>
+
+            <div class="detail">
+              <a href="{{ book.url }}">詳細を見る</a>
+            </div>
           </div>
-        </a>
 
         <div class="clear"></div>
+
       {% endfor %}
     {% endif %}
   </section>

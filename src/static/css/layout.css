@@ -15,7 +15,7 @@ body {
 header {
   height: 60px;
   width: 100%;
-  background-color: #78d19e;
+  background-color: #00d068;
   color: #fff;
   top: 0px;
 }
@@ -41,7 +41,7 @@ main {
 }
 
 footer {
-  background-color: #78d19e;
+  background-color: #00d068;
   height: 60px;
 }
 
@@ -55,7 +55,7 @@ footer {
 }
 
 #pre-footer {
-  background-color: #9edfb9;
+  background-color: #33ff99;
   height: 40px;
 }
 
@@ -71,6 +71,7 @@ h1 {
   font-size: 20pt;
   letter-spacing: 1px;
   color: #727272;
+  margin-top: 20px;
   margin-bottom: 20px;
   padding-left: 10px;
 }
@@ -78,7 +79,7 @@ h1 {
 h2 {
   font-size: 15pt;
   letter-spacing: 1px;
-  color: #78d19e;
+  color: #00d068;
   border-bottom: #c4ecd5 1px solid;
   padding: 10px 20px;
   margin-bottom: 20px;

@@ -19,21 +19,25 @@ section.books .book {
 section.books .book:hover {
   position: relative;
   background-color:#e9e9e9;
-  border: 2px solid #78d19e;
 }
 
 section.books .book .title {
   float: left;
-  width: 680px;
-  color: #555;
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 15px 0;
+  width: 700px;
+  margin: 20px 0 15px 0;
   padding-left: 10px;
 }
 
-section.books .book .title p {
+section.books .book .title a {
+  color: #555;
+  letter-spacing: 1px;
   text-decoration: none;
+  font-size: 14pt;
+}
+
+section.books .book .title a:hover {
+  color: #d00068;
+  text-decoration: underline;
 }
 
 section.books .book .photo {
@@ -46,8 +50,55 @@ section.books .book .photo {
 
 section.books .book .spec {
   float: left;
-  width: 680px;
+  width: 700px;
   margin: 5px 10px;
-  color: #555;
+  color: #666;
+}
+
+section.books .book .spec dt {
+  float: left;
+  margin-right: 5px;
+  font-size: 9pt;
+}
+
+section.books .book .spec dd {
+  float: left;
+  margin-right: 20px;
+  font-size: 11pt;
+}
+
+section.books .book .description {
+  float: left;
+  width: 700px;
+  margin: 5px 10px;
+  color: #666;
   word-wrap: break-word;
+  font-size: 11pt;
+}
+
+section.books .book .detail {
+  float: left;
+  width: 700px;
+  margin: 15px 10px;
+}
+
+section.books .book .detail a {
+  float: right;
+  color: #fff;
+  background-color:#d00068;
+  margin-right: 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+section.books .book .detail a:hover {
+  float: right;
+  color: #fff;
+  background-color:#d00068;
+  padding: 10px 30px;
+  border-radius: 5px;
+  position: relative;
+  top: 1px;
+  box-shadow: none;
 }
