@@ -24,12 +24,9 @@
       {% for book in books %}
         <a href="{{ book.url }}">
           <div class="book">
-            {% if 'noimage' in book.large_image_url %}
-              {% set image_url = url_for('static', filename='image/noimage.png') %}
-            {% else %}
-              {% set image_url = book.large_image_url %}
-            {% endif %}
-            <img class="photo" src="{{ image_url }}">
+            <div class="photo">
+              <img src="{{ book.large_image_url }}">
+            </div>
 
             <div class="title">
               <p>{{ book.title }}</p>

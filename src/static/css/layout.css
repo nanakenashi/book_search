@@ -61,12 +61,15 @@ h1, h2, header, footer, p, li {
 
 h1 {
   font-size: 20pt;
+  letter-spacing: 1px;
   color: #727272;
   margin-bottom: 20px;
+  padding-left: 10px;
 }
 
 h2 {
   font-size: 15pt;
+  letter-spacing: 1px;
   color: #78d19e;
   border-bottom: #c4ecd5 1px solid;
   padding: 10px 20px;
