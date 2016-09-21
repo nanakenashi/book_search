@@ -1,0 +1,49 @@
+{% extends '_base.html' %}
+
+{% block css %}
+  <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/list.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block eyecatch %}
+  <img src="{{ url_for('static', filename='image/eyecatch.jpg') }}">
+{% endblock%}
+
+{% block main_contents %}
+
+  <h2>著者の頭文字から探す</h2>
+
+  <div class="list">
+    <ul>
+      {% for initial in initials %}
+        <li>
+          <a href="{{ url_for('authors', initial=initial) }}">
+            {{ initial }}行の著者
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+
+  <h2>人気の著者から探す</h2>
+
+  <div class="list">
+    <ul>
+      {% for author in authors %}
+        <li>
+          <a href="{{ url_for('author', author_id=author.id) }}">
+            {{ author.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="clear"></div>
+  </div>
+{% endblock%}
+
+{% block pre_footer %}
+  pre-footer
+{% endblock%}

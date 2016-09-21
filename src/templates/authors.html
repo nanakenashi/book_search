@@ -2,13 +2,12 @@
 
 {% block css %}
   <link href="{{ url_for('static', filename='css/authors.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/list.css') }}" rel="stylesheet">
 {% endblock %}
 
-{% block eyecatch %}
-  <img src="{{ url_for('static', filename='image/eyecatch.jpg') }}">
-{% endblock%}
-
 {% block main_contents %}
+
+  <h1>{{ initial }}行の著者一覧</h1>
 
   <h2>著者から探す</h2>
 

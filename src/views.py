@@ -5,10 +5,21 @@ from .lib.rakuten_books.searcher import Searcher
 
 
 @app.route('/')
-def authors():
+def index():
+    initials = [
+        'あ', 'か', 'さ', 'た', 'な',
+        'は', 'ま', 'や', 'ら', 'わ'
+    ]
     authors = Author.query.all()
 
-    return render_template('authors.html', authors=authors)
+    return render_template('index.html', initials=initials, authors=authors)
+
+
+@app.route('/<initial>/')
+def authors(initial):
+    authors = Author.query.filter_by(initial=initial).all()
+
+    return render_template('authors.html', initial=initial, authors=authors)
 
 
 @app.route('/a-<author_id>/')

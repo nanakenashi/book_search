@@ -15,10 +15,12 @@ if __name__ == '__main__':
 
         for row in reader:
             name = row.get('name', None)
+            line = row.get('line', None)
+            initial = row.get('initial', None)
             url = row.get('url', None)
 
             if name is not None:
-                author = Author(name=name, url=url)
+                author = Author(name=name, line=line, initial=initial, url=url)
                 db.session.add(author)
 
         db.session.commit()
