@@ -6,20 +6,24 @@ from .lib.rakuten_books.searcher import Searcher
 
 @app.route('/')
 def index():
-    initials = [
+    lines = [
         'あ', 'か', 'さ', 'た', 'な',
         'は', 'ま', 'や', 'ら', 'わ'
     ]
     authors = Author.query.all()
 
-    return render_template('index.html', initials=initials, authors=authors)
+    return render_template('index.html', lines=lines, authors=authors)
 
 
-@app.route('/<initial>/')
-def authors(initial):
-    authors = Author.query.filter_by(initial=initial).all()
+@app.route('/<line>/')
+def authors(line):
+    authors = Author.query.filter_by(line=line).all()
 
-    return render_template('authors.html', initial=initial, authors=authors)
+    initials = __get_initials(authors)
+
+    return render_template(
+            'authors.html',
+            line=line, initials=initials, authors=authors)
 
 
 @app.route('/a-<author_id>/')
@@ -30,3 +34,7 @@ def author(author_id):
     books = Searcher(application_id).find({'author': author.name})
 
     return render_template('author.html', author=author, books=books)
+
+
+def __get_initials(authors):
+    return set([author.initial for author in authors])

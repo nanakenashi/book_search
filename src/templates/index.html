@@ -15,10 +15,10 @@
 
   <div class="list">
     <ul>
-      {% for initial in initials %}
+      {% for line in lines %}
         <li>
-          <a href="{{ url_for('authors', initial=initial) }}">
-            {{ initial }}行の著者
+          <a href="{{ url_for('authors', line=line) }}">
+            {{ line }}行の著者
           </a>
         </li>
       {% endfor %}
