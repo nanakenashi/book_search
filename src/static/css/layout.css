@@ -64,7 +64,7 @@ footer {
   clear: both;
 }
 
-h1, h2, header, footer, p, li {
+h1, h2, h3, header, footer, p, li {
   font-family: 'Noto Sans Japanese', sans-serif;
 }
 
@@ -85,5 +85,15 @@ h2 {
   border-bottom: #c4ecd5 1px solid;
   padding: 10px 20px;
   margin-bottom: 20px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 12pt;
+  letter-spacing: 1px;
+  color: #6800d0;
+  padding: 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: normal;
 }

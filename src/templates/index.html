@@ -15,9 +15,9 @@
 
   <div class="list">
     <ul>
-      {% for line in lines %}
+      {% for line_id, line in lines.items() %}
         <li>
-          <a href="{{ url_for('authors', line=line) }}">
+          <a href="{{ url_for('authors', line_id=line_id) }}">
             {{ line }}行の著者
           </a>
         </li>
@@ -31,7 +31,7 @@
 
   <div class="list">
     <ul>
-      {% for author in authors %}
+      {% for author in popular_authors %}
         <li>
           <a href="{{ url_for('author', author_id=author.id) }}">
             {{ author.name }}
@@ -45,5 +45,4 @@
 {% endblock%}
 
 {% block pre_footer %}
-  pre-footer
 {% endblock%}

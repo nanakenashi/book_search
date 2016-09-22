@@ -6,17 +6,18 @@ from .lib.rakuten_books.searcher import Searcher
 
 @app.route('/')
 def index():
-    lines = [
-        'あ', 'か', 'さ', 'た', 'な',
-        'は', 'ま', 'や', 'ら', 'わ'
-    ]
-    authors = Author.query.all()
+    lines = __line_dict()
+    filter = Author.id.in_(__popular_author_ids())
+    popular_authors = Author.query.filter(filter).all()
 
-    return render_template('index.html', lines=lines, authors=authors)
+    return render_template(
+            'index.html',
+            lines=lines, popular_authors=popular_authors)
 
 
-@app.route('/<line>/')
-def authors(line):
+@app.route('/l-<int:line_id>/')
+def authors(line_id):
+    line = __line(line_id)
     authors = Author.query.filter_by(line=line).all()
 
     initials = __get_initials(authors)
@@ -26,7 +27,7 @@ def authors(line):
             line=line, initials=initials, authors=authors)
 
 
-@app.route('/a-<author_id>/')
+@app.route('/a-<int:author_id>/')
 def author(author_id):
     author = Author.query.filter_by(id=author_id).first()
 
@@ -38,3 +39,47 @@ def author(author_id):
 
 def __get_initials(authors):
     return set([author.initial for author in authors])
+
+
+def __popular_author_ids():
+    return [
+        94,
+        123,
+        330,
+        339,
+        343,
+        429,
+        471,
+        595,
+        662,
+        651,
+        1032,
+        1095,
+        1115,
+        1212,
+        1253,
+        1277,
+        1294,
+        1309,
+        1345,
+        1424,
+    ]
+
+
+def __line(line_id):
+    return __line_dict()[line_id]
+
+
+def __line_dict():
+    return {
+        1: 'あ',
+        2: 'か',
+        3: 'さ',
+        4: 'た',
+        5: 'な',
+        6: 'は',
+        7: 'ま',
+        8: 'や',
+        9: 'ら',
+        10: 'わ'
+    }
