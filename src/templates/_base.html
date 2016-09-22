@@ -30,6 +30,20 @@
 
     <div id="pre-footer">
       {% block pre_footer %}
+        <div class="list">
+          <p class="title">
+            人気の著者
+          </p>
+          <ul>
+            {% for author in popular_authors %}
+              <li>
+                <a href="{{ url_for('author', author_id=author.id) }}">
+                  {{ author.name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       {% endblock %}
     </div>
 

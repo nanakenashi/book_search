@@ -31,10 +31,15 @@ def authors(line_id):
 def author(author_id):
     author = Author.query.filter_by(id=author_id).first()
 
+    filter = Author.id.in_(__popular_author_ids())
+    popular_authors = Author.query.filter(filter).all()
+
     application_id = app.config['RAKUTEN_APPLICATION_ID']
     books = Searcher(application_id).find({'author': author.name})
 
-    return render_template('author.html', author=author, books=books)
+    return render_template(
+            'author.html',
+            author=author, popular_authors=popular_authors, books=books)
 
 
 def __get_initials(authors):
