@@ -23,7 +23,7 @@ header div {
 header div a {
   color: #fff;
   font-size: 30px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   line-height: 60px;
   text-align: center;
   text-decoration: none;
@@ -49,7 +49,7 @@ footer {
 }
 
 #pre-footer {
-  background-color: #33ff99;
+  background-color: #00f77c;
   height: 110px;
   margin-top: 20px;
 }
@@ -63,7 +63,12 @@ footer {
 
 #pre-footer .list .title {
   font-size: 11pt;
-  margin: 10px;
+  letter-spacing: 2pt;
+  color:#fff;
+  border-bottom: #fff 1px solid;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  margin: 5px;
 }
 
 #pre-footer .list ul {
@@ -73,6 +78,18 @@ footer {
 #pre-footer .list li {
   float: left;
   margin: 5px 10px;
+  padding-left: 0px;
+  width: 70px;
+}
+
+#pre-footer .list li a {
+  color:#fff;
+  text-decoration: none;
+}
+
+#pre-footer .list li a:hover {
+  color:#d00068;
+  text-decoration: underline;
 }
 
 .clear {
@@ -84,8 +101,8 @@ h1, h2, h3, header, footer, p, li {
 }
 
 h1 {
-  font-size: 20pt;
-  letter-spacing: 1px;
+  font-size: 20px;
+  letter-spacing: 2px;
   color: #727272;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -94,8 +111,8 @@ h1 {
 }
 
 h2 {
-  font-size: 15pt;
-  letter-spacing: 1px;
+  font-size: 16px;
+  letter-spacing: 2px;
   color: #00d068;
   border-bottom: #c4ecd5 1px solid;
   padding: 10px 20px;
@@ -104,8 +121,8 @@ h2 {
 }
 
 h3 {
-  font-size: 12pt;
-  letter-spacing: 1px;
+  font-size: 15px;
+  letter-spacing: 2px;
   color: #6800d0;
   padding: 10px 10px;
   margin-top: 10px;

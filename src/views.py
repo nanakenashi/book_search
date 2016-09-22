@@ -20,11 +20,17 @@ def authors(line_id):
     line = __line(line_id)
     authors = Author.query.filter_by(line=line).all()
 
+    filter = Author.id.in_(__popular_author_ids())
+    popular_authors = Author.query.filter(filter).all()
+
     initials = __get_initials(authors)
 
     return render_template(
             'authors.html',
-            line=line, initials=initials, authors=authors)
+            line=line,
+            initials=initials,
+            authors=authors,
+            popular_authors=popular_authors)
 
 
 @app.route('/a-<int:author_id>/')
