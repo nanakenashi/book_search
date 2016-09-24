@@ -1,7 +1,18 @@
 {% extends '_base.html' %}
 
+{% block title %}
+  Book Shelf | {{ author.name }}の著書を探す
+{% endblock %}
+
 {% block css %}
   <link href="{{ url_for('static', filename='css/author.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block breadcrumbs_contents %}
+  <p>
+    <a href="{{ url_for('index')}}">Book Shelf</a> <span>&gt</span>
+    {{ author.name }}
+  </p >
 {% endblock %}
 
 {% block main_contents %}
@@ -72,4 +83,4 @@
       {% endfor %}
     {% endif %}
   </section>
-{% endblock%}
+{% endblock %}

@@ -6,8 +6,9 @@
 }
 
 .list ul {
-  margin: 10px auto;
+  margin: 10px auto 30px auto;
   list-style: none;
+  overflow: hidden;
 }
 
 .list li {

@@ -2,7 +2,9 @@
 <html lang="ja">
   <head>
     <title>
-      Book Shelf
+      {% block title %}
+        Book Shelf
+      {% endblock %}
     </title>
     <meta charset="utf-8">
 
@@ -22,6 +24,13 @@
       {% block eyecatch %}
       {% endblock %}
     </div>
+
+    {% block breadcrumbs %}
+      <div id="breadcrumbs">
+        {% block breadcrumbs_contents %}
+        {% endblock %}
+      </div>
+    {% endblock %}
 
     <main>
       {% block main_contents %}
@@ -52,6 +61,9 @@
     {% endblock %}
 
     <footer>
+      <div>
+        <p>© 2016 Book Shelf</p>
+      </div>
     </footer>
   </body>
 </html>
