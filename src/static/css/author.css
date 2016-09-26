@@ -9,7 +9,7 @@ section.books a {
 }
 
 section.books .book {
-  height: 210px;
+  height: 250px;
   margin: 10px 5px;
   background-color:#f9f9f9;
   border: 2px solid #bdc8ca;
@@ -44,10 +44,9 @@ section.books .book .photo {
   float: left;
   width: 200px;
   height: 200px;
-  margin: 5px 10px;
+  margin: 25px 10px;
   text-align: center;
   vertical-align: middle;
-  background-color: #fff;
 }
 
 section.books .book .spec {
@@ -76,6 +75,7 @@ section.books .book .description {
   color: #666;
   word-wrap: break-word;
   font-size: 11pt;
+  line-height: 1.5em;
 }
 
 section.books .book .detail {
