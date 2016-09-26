@@ -10,7 +10,7 @@ class Searcher:
     def __init__(self, application_id):
         self.application_id = application_id
 
-    def find(self, opts):
+    def find_by(self, opts):
         query = self.__build_query(opts)
         r = requests.get(self.URL, params=query)
         books = self.__wrap_array(r.json()['Items'])
@@ -26,7 +26,8 @@ class Searcher:
     def __base_query(self):
         return {
             'format': 'json',
-            'applicationId': self.application_id
+            'applicationId': self.application_id,
+            'sort': 'reviewCount'
         }
 
     def __wrap_array(self, rows):

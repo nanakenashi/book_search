@@ -8,6 +8,11 @@
   <link href="{{ url_for('static', filename='css/author.css') }}" rel="stylesheet">
 {% endblock %}
 
+{% block js %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='js/author.js') }}"></script>
+{% endblock %}
+
 {% block breadcrumbs_contents %}
   <p>
     <a href="{{ url_for('index')}}">Book Shelf</a> <span>&gt</span>
@@ -29,58 +34,12 @@
   </div>
 
   <section class="books">
-    <h2>{{ author.name }}の著書一覧</h2>
-
     {% if books | length > 0 %}
-      {% for book in books %}
-          <div class="book">
-            <div class="photo">
-              <a href="{{ book.url }}">
-                <img src="{{ book.large_image_url }}">
-              </a>
-            </div>
+      <h2>{{ author.name }}の著書一覧</h2>
 
-            <div class="title">
-              <a href="{{ book.url }}">
-                {{ book.title }}
-              </a>
-            </div>
+      {% include '_parts/_books.html' %}
 
-            <div class="spec">
-              <dl>
-                <dt>出版社</dt>
-                <dd>
-                  {{ book.publisher_name }}
-                </dd>
-                <dt>発売日</dt>
-                <dd>
-                  {{ book.sales_date }}
-                </dd>
-                <dt>レビュー平均値</dt>
-                <dd>
-                  {{ book.review_average }}
-                </dd>
-                <dt>レビュー数</dt>
-                <dd>
-                  {{ book.review_count }}
-                </dd>
-
-                <div class="clear"></div>
-              </dl>
-            </div>
-
-            <div class="description">
-              {{ book.caption | truncate(185) }}
-            </div>
-
-            <div class="detail">
-              <a href="{{ book.url }}">詳細を見る</a>
-            </div>
-          </div>
-
-        <div class="clear"></div>
-
-      {% endfor %}
+      <div class="author_id" data-author_id="{{ author.id }}"></div>
     {% endif %}
   </section>
 {% endblock %}

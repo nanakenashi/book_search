@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import request, render_template
 from src import app
 from src.models import Author
 from .lib.rakuten_books.searcher import Searcher
@@ -41,11 +41,24 @@ def author(author_id):
     popular_authors = Author.query.filter(filter).all()
 
     application_id = app.config['RAKUTEN_APPLICATION_ID']
-    books = Searcher(application_id).find({'author': author.name})
+    books = Searcher(application_id).find_by({'author': author.name})
 
     return render_template(
             'author.html',
             author=author, popular_authors=popular_authors, books=books)
+
+
+@app.route('/_books/')
+def _books():
+    page = request.args.get('page')
+    author_id = request.args.get('author_id')
+    author = Author.query.filter_by(id=author_id).first()
+
+    searcher = Searcher(app.config['RAKUTEN_APPLICATION_ID'])
+    params = {'author': author.name, 'page': page}
+    books = searcher.find_by(params)
+
+    return render_template('_parts/_books.html', books=books, page=page)
 
 
 def __get_initials(authors):
